@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.newsapp.Models.NewsHeadlines;
 import com.squareup.picasso.Picasso;
@@ -28,7 +30,7 @@ public class DetailsActivity extends AppCompatActivity {
         txt_title = findViewById(R.id.text_detail_title);
         txt_author = findViewById(R.id.text_detail_author);
         txt_detail = findViewById(R.id.Text_detail_detail);
-        txt_content = findViewById(R.id.Text_detail_content);
+        //txt_content = findViewById(R.id.Text_detail_content);
         txt_time = findViewById(R.id.text_detail_time);
         img_news = findViewById(R.id.img_detail_news);
         full_article = findViewById(R.id.Expand_article_webview);
@@ -40,7 +42,7 @@ public class DetailsActivity extends AppCompatActivity {
         txt_author.setText(headlines.getAuthor());
         txt_time.setText(headlines.getPublishedAt());
         txt_detail.setText(headlines.getDescription());
-        txt_content.setText(headlines.getContent());
+        //txt_content.setText(headlines.getContent());
         Picasso.get().load(headlines.getUrlToImage()).into(img_news);
         txt_article_url = headlines.getUrl();
 

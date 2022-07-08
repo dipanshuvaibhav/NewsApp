@@ -1,18 +1,19 @@
 package com.example.newsapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MotionEventCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newsapp.Models.NewsApiResponse;
 import com.example.newsapp.Models.NewsHeadlines;
@@ -23,10 +24,10 @@ public class HomeScreen extends AppCompatActivity implements SelectListener, Vie
     RecyclerView recyclerView;
     CustomAdapter adapter;
     ProgressDialog dialog;
-    Button b1, b2, b3, b4, b5, b6, b7;
+    Button b1, b2, b3, b4, b5, b6, b7, b0;
     SearchView searchView;
 
-    private EndlessRecyclerViewScrollListener scrollListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,15 @@ public class HomeScreen extends AppCompatActivity implements SelectListener, Vie
         b7 = findViewById(R.id.btn_7);
         b7.setOnClickListener(this);
 
+        b0 = findViewById(R.id.btn_0);
+
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         RequestManager manager = new RequestManager(this);
         manager.getNewsHeadlines(listener, "general", null);
     }
@@ -92,11 +102,6 @@ public class HomeScreen extends AppCompatActivity implements SelectListener, Vie
 
     private void showNews(List<NewsHeadlines> list) {
         recyclerView = findViewById(R.id.recycler_main);
-
-        // Experiment
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager();
-
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         adapter = new CustomAdapter(this, list, this);
@@ -105,18 +110,22 @@ public class HomeScreen extends AppCompatActivity implements SelectListener, Vie
 
     @Override
     public void OnNewsClicked(NewsHeadlines headlines) {
-        startActivity(new Intent(HomeScreen.this, DetailsActivity.class)
-                .putExtra("data", headlines));
+        startActivity(new Intent(HomeScreen.this, DetailsActivity.class).putExtra("data", headlines));
+
+        //Experiment
+
     }
 
     @Override
     public void onClick(View v) {
         Button button = (Button) v;
         String category = button.getText().toString();
-        dialog.setTitle("Fetching news articles of " + category);
+        dialog.setTitle("Fetching news articles for " + category);
         dialog.show();
         RequestManager manager = new RequestManager(this);
         manager.getNewsHeadlines(listener, category, null);
 
     }
+
+
 }

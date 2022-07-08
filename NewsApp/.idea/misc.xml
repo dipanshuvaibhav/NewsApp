@@ -4,11 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_article_web_view.xml" value="0.3484375" />
-        <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_details.xml" value="0.1" />
+        <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_details.xml" value="0.22590361445783133" />
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_home_screen.xml" value="0.358695652173913" />
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.358695652173913" />
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_web_view.xml" value="0.3484375" />
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_home_screen.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_preview.xml" value="0.3625" />
         <entry key="..\:/Users/dipan/AndroidStudioProjects/NewsApp/app/src/main/res/layout/headline_list_items.xml" value="0.3614583333333333" />
       </map>
     </option>
